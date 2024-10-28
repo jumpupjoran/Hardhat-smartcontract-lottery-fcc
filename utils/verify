@@ -1,0 +1,20 @@
+const { run } = require("hardhat");
+
+const verify = async (contractAddress, args) => {
+  // (" verify, subtask,"{object with the actual parameters})
+  console.log("verifying contract..");
+  try {
+    await run("verify:verify", {
+      address: contractAddress,
+      constructorArguments: args,
+    }); // sometimes we get an error that the contract is already verified, because simpelstorage is a common contract that etherscan automatically verifies it
+  } catch (e) {
+    if (e.message.toLowerCase().includes("already verified")) {
+      console.log("Already Verified!");
+    } else {
+      console.log(e);
+    }
+  }
+};
+
+module.exports = { verify };

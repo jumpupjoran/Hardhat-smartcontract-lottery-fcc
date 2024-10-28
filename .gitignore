@@ -1,0 +1,22 @@
+
+# Environment
+.env
+
+# Node modules
+node_modules/
+
+# Hardhat files
+artifacts/
+cache/
+coverage/
+deployments/
+
+# Personal backups or notes
+joran_notes_backup/
+
+# System or editor-specific
+.DS_Store²
+.vscode/
+
+# Logs
+*.log
